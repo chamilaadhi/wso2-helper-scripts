@@ -5,6 +5,14 @@
 adminUser=admin
 adminPassword=admin
 
+#Custom roles
+role_array=( 
+    'role1' 
+    'role2' 
+    'roleX'
+    'roleY'
+)
+
 #Users and roles list. These users will be created with the given role
 #User and roles are seperated with ::, roles are seperated with ','
 #Note: if single role, add a ',' at the end
@@ -18,14 +26,6 @@ user_array=(
     'creator2::Internal/creator,role2'
     'publisher1::Internal/publisher,'
     'publisher2::Internal/publisher,'
-)
-
-#Custom roles
-role_array=( 
-    'role1' 
-    'role2' 
-    'roleX'
-    'roleY'
 )
 
 #######################################################################
