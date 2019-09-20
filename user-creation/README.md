@@ -5,7 +5,7 @@ Password for every user is 'admin'
 Following users with roles are created
 
 | User       |      Roles                    | 
-|------------|:-----------------------------:|
+|------------|-------------------------------|
 | creator    |  Internal/creator             |
 | publisher  |  Internal/publisher           |
 | subscriber |  Internal/subscriber          | 
