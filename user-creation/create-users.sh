@@ -3,6 +3,7 @@
 ########################### configuration ############################
 #admin credentials. Add tenant admin credentials to create tenant users
 adminUser=admin
+#adminUser=admin@wso2.com
 adminPassword=admin
 
 #Custom roles
