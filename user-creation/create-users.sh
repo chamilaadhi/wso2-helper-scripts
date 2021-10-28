@@ -90,23 +90,6 @@ function addRole () {
                 </soapenv:Envelope>' --write-out "%{http_code}\n" --silent --output /dev/null 
 }
 
-function deleteRole () {
-
-    curl -k -X POST \
-            https://localhost:9443/services/UserAdmin \
-            -u $adminUser:$adminPassword \
-            -H 'Content-Type: text/xml' \
-            -H 'SOAPAction: "urn:deleteRole"' \
-            -d '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://org.apache.axis2/xsd">
-                <soapenv:Header/>
-                <soapenv:Body>
-                    <xsd:addRole>
-                        <xsd:roleName>'$1'</xsd:roleName>
-                        <xsd:isSharedRole>false</xsd:isSharedRole>
-                    </xsd:addRole>
-                </soapenv:Body>
-                </soapenv:Envelope>' --write-out "%{http_code}\n" --silent --output /dev/null 
-}
 ########################## execution flow ################################
 #add custom roles
 addAllCustomRoles
