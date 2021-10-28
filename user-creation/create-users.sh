@@ -96,7 +96,7 @@ function deleteRole () {
             https://localhost:9443/services/UserAdmin \
             -u $adminUser:$adminPassword \
             -H 'Content-Type: text/xml' \
-            -H 'SOAPAction: "urn:addRole"' \
+            -H 'SOAPAction: "urn:deleteRole"' \
             -d '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://org.apache.axis2/xsd">
                 <soapenv:Header/>
                 <soapenv:Body>
