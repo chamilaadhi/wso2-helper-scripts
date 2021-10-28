@@ -90,6 +90,8 @@ function addRole () {
                 </soapenv:Envelope>' --write-out "%{http_code}\n" --silent --output /dev/null 
 }
 
+function deleteRole () {
+}
 ########################## execution flow ################################
 #add custom roles
 addAllCustomRoles
