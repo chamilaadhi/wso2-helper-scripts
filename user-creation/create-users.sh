@@ -73,6 +73,26 @@ function addUserWithRole () {
             </soapenv:Envelope>' --write-out "%{http_code}\n" --silent --output /dev/null 
 }
 
+function addUser() {
+    role1="${2%%\,*}"
+    role2="${2##*\,}"
+    curl -k -X POST \
+            https://localhost:9443/services/UserAdmin \
+            -u $adminUser:$adminPassword \
+            -H 'Content-Type: text/xml' \
+            -H 'SOAPAction: "urn:addUser"' \
+            -d '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://org.apache.axis2/xsd" xmlns:xsd1="http://common.mgt.user.carbon.wso2.org/xsd">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <xsd:addUser>
+                    <xsd:userName>'$1'</xsd:userName>
+                    <xsd:password>'$2'</xsd:password>
+                    <xsd:roles>'$3'</xsd:roles>
+                </xsd:addUser>
+            </soapenv:Body>
+            </soapenv:Envelope>' --write-out "%{http_code}\n" --silent --output /dev/null 
+}
+
 function addRole () {
     curl -k -X POST \
             https://localhost:9443/services/UserAdmin \
